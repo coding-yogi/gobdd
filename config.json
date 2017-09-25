@@ -1,0 +1,13 @@
+{
+    "envs" : [
+        {
+            "name" : "qa",
+            "oauthUrl" : "https://ml-test.apimanagement.hana.ondemand.com:443/oauth/generateToken",
+            "baseUrl" : "https://ml-test.apimanagement.hana.ondemand.com:443/lr/v1",
+            "tenant" : "disney",
+            "username" : "qCF7CA9ZHLzhgH1Rf4AebjMj2Cw4JSSO",
+            "password" : "PrlNBFzQumJ9rgs2"
+        }
+    ]
+}
+

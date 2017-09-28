@@ -4,11 +4,11 @@ import (
 	"flag"
 	"net/http"
 
-	"github.com/coding-yogi/go_bdd/handlers"
-	"github.com/coding-yogi/go_bdd/models/appconfig"
 	. "github.com/onsi/ginkgo"
 	"github.com/onsi/ginkgo/reporters"
 	. "github.com/onsi/gomega"
+	"github.wdf.sap.corp/ml-base/lr-bdd/handlers"
+	"github.wdf.sap.corp/ml-base/lr-bdd/models/appconfig"
 
 	"testing"
 )

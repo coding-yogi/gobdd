@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/coding-yogi/go_bdd/common/utils/rest"
-	"github.com/coding-yogi/go_bdd/handlers"
-	"github.com/coding-yogi/go_bdd/models/api/response"
+	"github.wdf.sap.corp/ml-base/lr-bdd/common/utils/rest"
+	"github.wdf.sap.corp/ml-base/lr-bdd/handlers"
+	"github.wdf.sap.corp/ml-base/lr-bdd/models/api/response"
 )
 
 //GetOAuthToken ...

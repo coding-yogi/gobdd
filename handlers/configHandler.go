@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/coding-yogi/go_bdd/models/appconfig"
+	"github.wdf.sap.corp/ml-base/lr-bdd/models/appconfig"
 )
 
 func getConfigJSON() appconfig.AppConfig {

@@ -6,23 +6,23 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/coding-yogi/go_bdd/models"
+	"github.com/coding-yogi/go_bdd/models/appconfig"
 )
 
-func getConfigJSON() models.AppConfig {
+func getConfigJSON() appconfig.AppConfig {
 	file, err := ioutil.ReadFile("../config.json")
 	if err != nil {
 		log.Fatal("Unable to read config file")
 	}
 
-	appConf := models.AppConfig{}
+	appConf := appconfig.AppConfig{}
 	json.Unmarshal(file, &appConf)
 
 	return appConf
 }
 
 //GetEnvDetails ...
-func GetEnvDetails(envName string) (models.Environment, error) {
+func GetEnvDetails(envName string) (appconfig.Environment, error) {
 	appConf := getConfigJSON()
 	for _, env := range appConf.Envs {
 		if env.Name == envName {
@@ -30,5 +30,5 @@ func GetEnvDetails(envName string) (models.Environment, error) {
 		}
 	}
 
-	return models.Environment{}, errors.New("Environment not found")
+	return appconfig.Environment{}, errors.New("Environment not found")
 }

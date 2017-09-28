@@ -1,15 +1,14 @@
 package token
 
 import (
-	"bytes"
 	"encoding/json"
 	"errors"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 
+	"github.com/coding-yogi/go_bdd/common/utils/rest"
 	"github.com/coding-yogi/go_bdd/handlers"
-	"github.com/coding-yogi/go_bdd/models"
+	"github.com/coding-yogi/go_bdd/models/api/response"
 )
 
 //GetOAuthToken ...
@@ -19,23 +18,22 @@ func GetOAuthToken() (string, error) {
 	data := url.Values{}
 	data.Set("grant_type", "client_credentials")
 
-	//get access token
-	req, err := http.NewRequest("POST", env.OAuthURL, bytes.NewBufferString(data.Encode()))
-	if err != nil {
-		return "", errors.New("Error generating request for access token")
+	headers := []rest.Header{
+		rest.Header{Key: "content-type", Value: "application/x-www-form-urlencoded"},
 	}
+
+	req := rest.GenerateRequest("POST", env.OAuthURL, []byte(data.Encode()), headers)
 	req.SetBasicAuth(env.UserName, env.Password)
-	req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
 
 	client := &http.Client{}
-	res, err := client.Do(req)
+	res, err := rest.ExecuteRequestAndGetResponse(req, client)
 	if err != nil {
-		return "", errors.New("Error getting response of access token")
+		return "", errors.New("Error executing recommendation request")
 	}
 
-	defer res.Body.Close()
-	body, _ := ioutil.ReadAll(res.Body)
-	tokenRes := models.TokenResponse{}
+	body := rest.GetResponseBody(res)
+	tokenRes := responsemodels.TokenResponse{}
+
 	err = json.Unmarshal(body, &tokenRes)
 	if err != nil {
 		return "", errors.New("acces token not found in response. Body --> " + string(body))

@@ -1,4 +1,4 @@
-package models
+package appconfig
 
 //AppConfig ...
 type AppConfig struct {

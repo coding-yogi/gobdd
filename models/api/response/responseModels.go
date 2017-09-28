@@ -1,4 +1,6 @@
-package models
+package responsemodels
+
+import "encoding/json"
 
 // TokenResponse ...
 type TokenResponse struct {
@@ -35,8 +37,7 @@ type RestOperationStatusVOX struct {
 
 // Data ..
 type Data struct {
-	RestReturnData         []RestReturnData `json:"REST_RETURN_DATA"`
-	RestReturnDataAsString string
+	RestReturnData json.RawMessage `json:"REST_RETURN_DATA"`
 }
 
 // RestReturnData ..
@@ -44,6 +45,7 @@ type RestReturnData struct {
 	Recommendations []Recommendation `json:"recommendations"`
 	StudID          string           `json:"studId"`
 	Error           string           `json:"error"`
+	Authenticated   bool             `json:"authenticated"`
 }
 
 // Recommendation ...

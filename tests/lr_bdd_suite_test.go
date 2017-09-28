@@ -5,8 +5,9 @@ import (
 	"net/http"
 
 	"github.com/coding-yogi/go_bdd/handlers"
-	"github.com/coding-yogi/go_bdd/models"
+	"github.com/coding-yogi/go_bdd/models/appconfig"
 	. "github.com/onsi/ginkgo"
+	"github.com/onsi/ginkgo/reporters"
 	. "github.com/onsi/gomega"
 
 	"testing"
@@ -15,7 +16,7 @@ import (
 var (
 	environment string
 	client      *http.Client
-	env         models.Environment
+	env         appconfig.Environment
 )
 
 func init() {
@@ -23,7 +24,8 @@ func init() {
 }
 func TestGoBdd(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "GoBdd Suite")
+	junitReporter := reporters.NewJUnitReporter("junit.xml")
+	RunSpecsWithDefaultAndCustomReporters(t, "Learning Recommender API Test Suite", []Reporter{junitReporter})
 }
 
 var _ = BeforeSuite(func() {

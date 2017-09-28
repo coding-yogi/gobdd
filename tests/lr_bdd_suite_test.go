@@ -7,8 +7,8 @@ import (
 	. "github.com/onsi/ginkgo"
 	"github.com/onsi/ginkgo/reporters"
 	. "github.com/onsi/gomega"
-	"github.wdf.sap.corp/ml-base/lr-bdd/handlers"
-	"github.wdf.sap.corp/ml-base/lr-bdd/models/appconfig"
+	"github.wdf.sap.corp/ml-base/lr-bdd-tests/handlers"
+	"github.wdf.sap.corp/ml-base/lr-bdd-tests/models/appconfig"
 
 	"testing"
 )

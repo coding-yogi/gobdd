@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.wdf.sap.corp/ml-base/lr-bdd/models/appconfig"
+	"github.wdf.sap.corp/ml-base/lr-bdd-tests/models/appconfig"
 )
 
 func getConfigJSON() appconfig.AppConfig {

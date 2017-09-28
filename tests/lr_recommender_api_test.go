@@ -6,11 +6,11 @@ import (
 	"github.com/leonelquinteros/gorand"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.wdf.sap.corp/ml-base/lr-bdd/common/utils/rest"
-	"github.wdf.sap.corp/ml-base/lr-bdd/common/utils/token"
-	"github.wdf.sap.corp/ml-base/lr-bdd/constants"
-	"github.wdf.sap.corp/ml-base/lr-bdd/models/api/request"
-	"github.wdf.sap.corp/ml-base/lr-bdd/models/api/response"
+	"github.wdf.sap.corp/ml-base/lr-bdd-tests/common/utils/rest"
+	"github.wdf.sap.corp/ml-base/lr-bdd-tests/common/utils/token"
+	"github.wdf.sap.corp/ml-base/lr-bdd-tests/constants"
+	"github.wdf.sap.corp/ml-base/lr-bdd-tests/models/api/request"
+	"github.wdf.sap.corp/ml-base/lr-bdd-tests/models/api/response"
 )
 
 var _ = Describe("Learning Recommender API Tests: ", func() {

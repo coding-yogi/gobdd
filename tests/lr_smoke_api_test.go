@@ -11,7 +11,7 @@ import (
 	"github.wdf.sap.corp/ml-base/lr-bdd-tests/models/api/response"
 )
 
-var _ = Describe("Smoke API Tests: ", func() {
+var _ = Describe("Smoke API: ", func() {
 
 	var accessToken string
 	var url string

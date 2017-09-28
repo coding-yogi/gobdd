@@ -12,7 +12,7 @@ import (
 	"github.wdf.sap.corp/ml-base/lr-bdd-tests/models/api/response"
 )
 
-var _ = Describe("Config API Tests: ", func() {
+var _ = Describe("Config API: ", func() {
 
 	var accessToken string
 	var url string

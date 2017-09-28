@@ -25,7 +25,7 @@ func init() {
 func TestGoBdd(t *testing.T) {
 	RegisterFailHandler(Fail)
 	junitReporter := reporters.NewJUnitReporter("junit.xml")
-	RunSpecsWithDefaultAndCustomReporters(t, "Learning Recommender API Test Suite", []Reporter{junitReporter})
+	RunSpecsWithDefaultAndCustomReporters(t, "LR API Test Suite", []Reporter{junitReporter})
 }
 
 var _ = BeforeSuite(func() {

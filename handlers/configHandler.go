@@ -5,6 +5,7 @@ import (
 	"errors"
 	"io/ioutil"
 	"log"
+	"strings"
 
 	"github.wdf.sap.corp/ml-base/lr-bdd-tests/models/appconfig"
 )
@@ -25,7 +26,7 @@ func getConfigJSON() appconfig.AppConfig {
 func GetEnvDetails(envName string) (appconfig.Environment, error) {
 	appConf := getConfigJSON()
 	for _, env := range appConf.Envs {
-		if env.Name == envName {
+		if env.Name == strings.ToLower(envName) {
 			return env, nil
 		}
 	}

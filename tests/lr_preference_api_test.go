@@ -22,7 +22,7 @@ var _ = Describe("Preference API: ", func() {
 		JustBeforeEach(func() {
 			var err error
 			url = env.BaseURL + constants.PreferenceEndPoint
-			accessToken, err = token.GetOAuthToken()
+			accessToken, err = token.GetOAuthToken(env)
 			if err != nil {
 				Fail("Unable to get access token")
 			}
@@ -64,7 +64,7 @@ var _ = Describe("Preference API: ", func() {
 				Expect(resObj.RestOperationStatusVOX.Status).To(Equal("SUCCESS"))
 			})
 
-			Context("with an invalid Oauth token", func() {
+			Context("with an invalid OAuth token", func() {
 				It("should return an error", func() {
 					someInvalidAccessToken := "a1ABCDEFbcdGhijkLMnOp6QR01Ts"
 					headers := []rest.Header{

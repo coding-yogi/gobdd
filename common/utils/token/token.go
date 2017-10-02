@@ -5,16 +5,20 @@ import (
 	"errors"
 	"net/http"
 	"net/url"
+	"strings"
 
 	"github.wdf.sap.corp/ml-base/lr-bdd-tests/common/utils/rest"
-	"github.wdf.sap.corp/ml-base/lr-bdd-tests/handlers"
 	"github.wdf.sap.corp/ml-base/lr-bdd-tests/models/api/response"
+	"github.wdf.sap.corp/ml-base/lr-bdd-tests/models/appconfig"
 )
 
 //GetOAuthToken ...
-func GetOAuthToken() (string, error) {
+func GetOAuthToken(env appconfig.Environment) (string, error) {
 
-	env, err := config.GetEnvDetails("qa")
+	if strings.ToLower(env.Name) == "local" {
+		return "", nil
+	}
+
 	data := url.Values{}
 	data.Set("grant_type", "client_credentials")
 

@@ -22,7 +22,7 @@ var _ = Describe("Config API: ", func() {
 		JustBeforeEach(func() {
 			var err error
 			url = env.BaseURL + constants.ConfigEndPoint
-			accessToken, err = token.GetOAuthToken()
+			accessToken, err = token.GetOAuthToken(env)
 			if err != nil {
 				Fail("Unable to get access token")
 			}
@@ -62,7 +62,7 @@ var _ = Describe("Config API: ", func() {
 
 		})
 
-		Context("with an invalid Oauth token", func() {
+		Context("with an invalid OAuth token", func() {
 			It("should return an error", func() {
 				reqBody := requestmodels.ConfigRequest{
 					Main: requestmodels.ConfigRequestMain{

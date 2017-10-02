@@ -21,7 +21,7 @@ var _ = Describe("Smoke API: ", func() {
 		JustBeforeEach(func() {
 			var err error
 			url = env.BaseURL + constants.SmokeEndPoint
-			accessToken, err = token.GetOAuthToken()
+			accessToken, err = token.GetOAuthToken(env)
 			if err != nil {
 				Fail("Unable to get access token")
 			}

@@ -7,6 +7,14 @@
             "tenant" : "disney",
             "username" : "qCF7CA9ZHLzhgH1Rf4AebjMj2Cw4JSSO",
             "password" : "PrlNBFzQumJ9rgs2"
+        },
+        {
+            "name" : "local",
+            "oauthUrl" : null,
+            "baseUrl" : "http://localhost:5000/lr/v1",
+            "tenant" : "disney",
+            "username" : null,
+            "password" : null
         }
     ]
 }

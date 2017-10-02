@@ -23,7 +23,7 @@ var _ = Describe("Recommender API: ", func() {
 		JustBeforeEach(func() {
 			var err error
 			url = env.BaseURL + constants.RecommenderEndpoint
-			accessToken, err = token.GetOAuthToken()
+			accessToken, err = token.GetOAuthToken(env)
 			if err != nil {
 				Fail("Unable to get access token")
 			}
@@ -231,7 +231,7 @@ var _ = Describe("Recommender API: ", func() {
 			})
 		})
 
-		Context("with an invalid oauth token", func() {
+		Context("with an invalid OAuth token", func() {
 			It("should return an error", func() {
 				reqBody := []requestmodels.RecommendationRequest{
 					requestmodels.RecommendationRequest{

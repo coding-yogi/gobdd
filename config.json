@@ -2,17 +2,17 @@
     "envs" : [
         {
             "name" : "qa",
-            "oauthUrl" : "https://ml-test.apimanagement.hana.ondemand.com:443/oauth/generateToken",
-            "baseUrl" : "https://ml-test.apimanagement.hana.ondemand.com:443/lr/v1",
-            "tenant" : "disney",
-            "username" : "qCF7CA9ZHLzhgH1Rf4AebjMj2Cw4JSSO",
-            "password" : "PrlNBFzQumJ9rgs2"
+            "oauthUrl" : "http://localhost/oauth/generateToken",
+            "baseUrl" : "http://localhost/lr/v1",
+            "tenant" : "tenant1",
+            "username" : "test",
+            "password" : "test"
         },
         {
             "name" : "local",
             "oauthUrl" : null,
             "baseUrl" : "http://localhost:5000/lr/v1",
-            "tenant" : "disney",
+            "tenant" : "tenant2",
             "username" : null,
             "password" : null
         }

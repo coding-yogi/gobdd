@@ -19,6 +19,9 @@ var _ = Describe("Preference API: ", func() {
 
 	Describe("Setting preference", func() {
 
+		studentID := "00000034"
+		learningItem := "25076"
+
 		JustBeforeEach(func() {
 			var err error
 			url = env.BaseURL + constants.PreferenceEndPoint
@@ -30,11 +33,12 @@ var _ = Describe("Preference API: ", func() {
 
 		Context("for combination of student and learning item", func() {
 
+			id := studentID + "&&" + learningItem
 			reqBody := []requestmodels.PreferenceRequest{
 				requestmodels.PreferenceRequest{
-					ID:         "some_id",
-					Dismissed:  false,
-					Read:       true,
+					ID:         id,
+					Dismissed:  true,
+					Read:       false,
 					Bookmarked: false,
 					Liked:      false,
 				},
